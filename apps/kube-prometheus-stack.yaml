@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kuprst
+  name: kube-prometheus-stack
   namespace: argocd
 
 
 spec:
   destination:
-    namespace: kuprst.na
+    namespace: argocd
     server: https://kubernetes.default.svc
   project: default
   source:
