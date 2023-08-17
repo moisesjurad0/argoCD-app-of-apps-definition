@@ -4,13 +4,21 @@ metadata:
   name: apph1.kuprst
   namespace: argocd
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: argocd
-    server: {{ .Values.spec.destination.server }}
+    server: { { .Values.spec.destination.server } }
   project: default
   source:
     path: charts/kube-prometheus-stack
     repoURL: https://github.com/prometheus-community/helm-charts.git
     targetRevision: HEAD
+
+  # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true #it ensures that the namespace existes or get created
+    automated:
+      selfHeal: true #it ensures the app get exactly as defined in these files otherwise it syncs (creates what's missing)
+      prune: true # and drop any external changes

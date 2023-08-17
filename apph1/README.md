@@ -33,7 +33,7 @@ Chart.yml is empty
     --dest-namespace argocd `
     --dest-server https://kubernetes.default.svc `
     --repo https://github.com/moisesjurad0/argoCD-app-of-apps-definition `
-    --path apps.helm1 `
+    --path apph1 `
     --server 127.0.0.1:8080
     ```
 
