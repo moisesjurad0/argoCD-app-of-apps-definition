@@ -11,7 +11,7 @@ Chart.yml is empty
 1. exec this:
 
     ```PowerShell
-        argocd app create appsh1 \
+        argocd app create apph1 \
         --dest-namespace argocd \
         --dest-server https://kubernetes.default.svc \
         --repo https://github.com/moisesjurad0/argoCD-app-of-apps-definition \
