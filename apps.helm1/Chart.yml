@@ -1,0 +1,5 @@
+apiVersion: v2
+name: apph1
+version: 1.0.0
+description: hi I'm a helm app project by m01
+type: application
