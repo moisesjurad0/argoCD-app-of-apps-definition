@@ -14,11 +14,12 @@ spec:
     ### configuration to HELM Repo ###
     repoURL: https://prometheus-community.github.io/helm-charts/
     chart: kube-prometheus-stack
+    targetRevision: "*"
 
     ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
     # repoURL: https://github.com/prometheus-community/helm-charts.git
     # path: charts/kube-prometheus-stack
-    # targetRevision: main
+    # targetRevision: HEAD
 
   # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)
   syncPolicy:
