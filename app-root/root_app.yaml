@@ -14,7 +14,7 @@ spec:
     repoURL: https://github.com/moisesjurad0/argoCD-app-of-apps-definition
     path: app-root/apps # contains application spec files
     
-    targetRevision: HEAD
+    targetRevision: main
 
   # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)
   syncPolicy:
