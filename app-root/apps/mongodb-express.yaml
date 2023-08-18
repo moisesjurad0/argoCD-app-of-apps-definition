@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: moDbEx # kube-prometheus-stack
+  name: modb-ex # kube-prometheus-stack
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
