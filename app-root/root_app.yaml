@@ -11,9 +11,13 @@ spec:
     name: in-cluster
   project: default
   source:
+    ### configuration to HELM Repo ###
+    # repoURL: https://prometheus-community.github.io/helm-charts/
+    # chart: kube-prometheus-stack
+
+    ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
     repoURL: https://github.com/moisesjurad0/argoCD-app-of-apps-definition
     path: app-root/apps # contains application spec files
-    
     targetRevision: main
 
   # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)
