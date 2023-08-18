@@ -1,21 +1,13 @@
-# argoCD-app-of-apps-definition
+# GitOps Aplications
 
 <https://github.com/moisesjurad0/argoCD-app-of-apps-definition>
 
+1. app-root <-- app de apps, la principal es basada en repo git y las secundarias pueden ser repo git pero también repo Helm
+1. apph1 <-- app de apps basada en Helm Chart usando la carpeta templates de Helm
+1. apph2 <-- app de apps basada en Helm Chart pero funciona como una unificada xq tiene dependencias
+
 ## Command Summary
 
-1. `kubectl apply -f .\root_app.yaml` <-- apply with kubectl the ArgoCD app. Then sync any changes.
-2. or instead, can use a modified version of this
+1. `kubectl apply -f .\apph2.yaml` <-- apply with kubectl the ArgoCD app. Then sync any changes.
 
-    ```PowerShell
-        argocd app create apps \
-        --dest-namespace argocd \
-        --dest-server https://kubernetes.default.svc \
-        --repo https://github.com/argoproj/argocd-example-apps.git \
-        --path apps
-        
-        # then sync
-        argocd app sync apps  
-        # or sync this way using minikube
-        argocd app sync apps --server localhost:8080
-    ```
+1. `helm create <nombre de la app>` <-- puedes usar esto para crear una helm chart vacia y mirar sus parámetros

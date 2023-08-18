@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app
+  name: app-root
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,8 +11,9 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: apps # contains application spec files
     repoURL: https://github.com/moisesjurad0/argoCD-app-of-apps-definition
+    path: app-root/apps # contains application spec files
+    
     targetRevision: HEAD
 
   # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)

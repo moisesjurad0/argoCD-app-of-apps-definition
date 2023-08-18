@@ -1,4 +1,4 @@
-# app.heml1 (apph1)
+# app.heml2 (apph2)
 
 <https://github.com/moisesjurad0/argoCD-app-of-apps-definition>
 
