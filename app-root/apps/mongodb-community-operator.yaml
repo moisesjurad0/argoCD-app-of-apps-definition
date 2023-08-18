@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-root-mobdcoop # kube-prometheus-stack
+  name: moDbOp # kube-prometheus-stack
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
-  project: default
+  project: app-root-project
   source:
     ### configuration to HELM Repo ###
     repoURL: https://mongodb.github.io/helm-charts
