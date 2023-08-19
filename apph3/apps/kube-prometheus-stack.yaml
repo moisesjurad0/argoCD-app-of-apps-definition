@@ -9,15 +9,15 @@ spec:
   project: default
 
   source:
-  ### configuration to HELM Repo ###
-  repoURL: https://prometheus-community.github.io/helm-charts/
-  chart: kube-prometheus-stack
-  targetRevision: "*" # "*" to use the latest version
+    ### configuration to HELM Repo ###
+    repoURL: https://prometheus-community.github.io/helm-charts/
+    chart: kube-prometheus-stack
+    targetRevision: "*" # "*" to use the latest version
 
-  ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
-  # repoURL: https://github.com/prometheus-community/helm-charts.git
-  # path: charts/kube-prometheus-stack
-  # targetRevision: HEAD
+    ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
+    # repoURL: https://github.com/prometheus-community/helm-charts.git
+    # path: charts/kube-prometheus-stack
+    # targetRevision: HEAD
   
   destination:
     server: https://kubernetes.default.svc
