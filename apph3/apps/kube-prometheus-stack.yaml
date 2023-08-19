@@ -18,11 +18,11 @@ spec:
     # repoURL: https://github.com/prometheus-community/helm-charts.git
     # path: charts/kube-prometheus-stack
     # targetRevision: HEAD
-  
+
   destination:
     server: https://kubernetes.default.svc
-    namespace: apph3    
-  
+    namespace: apph3
+
   # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)
   syncPolicy:
     syncOptions:
