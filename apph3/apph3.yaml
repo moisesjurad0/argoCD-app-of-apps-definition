@@ -27,6 +27,7 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true #it ensures that the namespace existes or get created
+
     automated:
       selfHeal: true #it ensures the app get exactly as defined in these files otherwise it syncs (creates what's missing)
       prune: true # and drop any external changes
