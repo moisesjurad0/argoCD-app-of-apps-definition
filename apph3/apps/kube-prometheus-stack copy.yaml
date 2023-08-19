@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mongomanual # kube-prometheus-stack
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+
+  source:
+    ### configuration to HELM Repo ###
+    # repoURL: https://prometheus-community.github.io/helm-charts/
+    # chart: kube-prometheus-stack
+    # targetRevision: "*" # "*" to use the latest version
+
+    ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
+    repoURL: https://github.com/moisesjurad0/argoCD-app-of-apps-definition
+    path: apph3/mongo/
+    targetRevision: HEAD
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apph3
+
+  # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true #it ensures that the namespace existes or get created
+
+    automated:
+      selfHeal: true #it ensures the app get exactly as defined in these files otherwise it syncs (creates what's missing)
+      prune: true # and drop any external changes
