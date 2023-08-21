@@ -1,6 +1,6 @@
 # app.heml1 (apph1)
 
-<https://github.com/moisesjurad0/argoCD-app-of-apps-definition>
+<https://github.com/moisesjurad0/k8s-argoCD-app-of-apps-definition>
 
 <https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/>
 

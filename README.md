@@ -1,6 +1,6 @@
 # k8s - GitOps Application examples (ArgoCD)
 
-<https://github.com/moisesjurad0/argoCD-app-of-apps-definition>
+<https://github.com/moisesjurad0/k8s-argoCD-app-of-apps-definition>
 
 ## App of Apps Examples
 

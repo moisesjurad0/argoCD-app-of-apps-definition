@@ -16,7 +16,7 @@ spec:
     # chart: kube-prometheus-stack
 
     ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
-    repoURL: https://github.com/moisesjurad0/argoCD-app-of-apps-definition
+    repoURL: https://github.com/moisesjurad0/k8s-argoCD-app-of-apps-definition
     path: app-root/apps # contains application spec files
     targetRevision: HEAD
 
