@@ -1,4 +1,6 @@
-# extracted
+# README file to explain this mongo-stack
+
+## extracted from
 
 this mongo files from Nana Janashia's repo
 
