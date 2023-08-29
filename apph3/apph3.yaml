@@ -22,6 +22,9 @@ spec:
     - namespace: "*"
       server: "*"
 
+  allowedResourceTypes:
+    - "*/*" # This allows all resource types
+
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
