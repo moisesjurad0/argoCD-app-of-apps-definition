@@ -52,7 +52,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: apph3
+    namespace: default
 
   # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)
   syncPolicy:
