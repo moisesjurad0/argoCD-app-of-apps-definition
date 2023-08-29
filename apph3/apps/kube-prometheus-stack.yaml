@@ -32,5 +32,5 @@ spec:
       # - ServerSideApply=true # If ServerSideApply=true sync option is set, Argo CD will use kubectl apply --server-side command to apply changes.
 
     automated:
-      # selfHeal: true #it ensures the app get exactly as defined in these files otherwise it syncs (creates what's missing)
+      selfHeal: true #it ensures the app get exactly as defined in these files otherwise it syncs (creates what's missing)
       prune: true # and drop any external changes
