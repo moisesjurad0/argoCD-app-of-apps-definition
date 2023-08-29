@@ -91,6 +91,141 @@ have 3 parts:
 1. Service (svc) <-- for connecting to the exporter
 1. ServiceMonitor <-- to be discovered
 
+## Prometheus exporters details
+
 Can find it here
 
 <https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-mongodb-exporter>
+
+instruccions
+
+```sh
+# Get Repository Info
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# Install Chart
+helm install [RELEASE_NAME] prometheus-community/prometheus-mongodb-exporter
+
+# show values
+helm show values prometheus-community/prometheus-mongodb-exporter
+
+# save shown values
+helm show values prometheus-community/prometheus-mongodb-exporter > values.yaml
+```
+
+show values output
+
+```sh
+affinity: {}
+
+annotations: {}
+
+## Additional labels to add to all resources
+customLabels: {}
+
+dnsConfig: {}
+
+# Extra environment variables that will be passed into the exporter pod
+env: {}
+
+extraArgs:
+  - --collect-all
+
+fullnameOverride: ""
+
+image:
+  pullPolicy: IfNotPresent
+  repository: percona/mongodb_exporter
+  tag: ""
+
+imagePullSecrets: []
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: metrics
+  initialDelaySeconds: 10
+
+# [mongodb[+srv]://][user:pass@]host1[:port1][,host2[:port2],...][/database][?options]
+mongodb:
+  uri: "mongodb://mongodb:27017"
+
+# Name of an externally managed secret (in the same namespace) containing the connection uri as key `mongodb-uri`.
+# If this is provided, the value mongodb.uri is ignored.
+existingSecret:
+  name: ""
+  key: "mongodb-uri"
+
+nameOverride: ""
+
+nodeSelector: {}
+
+podAnnotations: {}
+#  prometheus.io/scrape: "true"
+#  prometheus.io/port: "metrics"
+
+podLabels: {}
+
+port: "9216"
+
+priorityClassName: ""
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: metrics
+  initialDelaySeconds: 10
+
+replicas: 1
+
+resources: {}
+  # limits:
+  #   cpu: 250m
+  #   memory: 192Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop: ["all"]
+  readOnlyRootFilesystem: true
+  runAsGroup: 10000
+  runAsNonRoot: true
+  runAsUser: 10000
+
+service:
+  labels: {}
+  annotations: {}
+  port: 9216
+  type: ClusterIP
+  portName: metrics
+
+serviceAccount:
+  create: true
+  # If create is true and name is not set, then a name is generated using the
+  # fullname template.
+  name:
+
+serviceMonitor:
+  enabled: false
+  interval: 30s
+  scrapeTimeout: 10s
+  namespace:
+  additionalLabels: {}
+  targetLabels: []
+  metricRelabelings: []
+  scheme: ""
+  tlsConfig: {}
+
+tolerations: []
+
+# Volumes that will be attached to the exporter deployment
+volumes: []
+
+# Volumes that will be mounted into the exporter pod
+volumeMounts: []
+
+```
