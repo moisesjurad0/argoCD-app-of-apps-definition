@@ -22,8 +22,11 @@ spec:
     - namespace: "*"
       server: "*"
 
-  allowedResourceTypes:
-    - "*/*" # This allows all resource types
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  # allowedResourceTypes:
+  #   - "*/*" # This allows all resource types
 
 ---
 apiVersion: argoproj.io/v1alpha1
