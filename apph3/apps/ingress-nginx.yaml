@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: pr-op # kube-prometheus-stack
+  name: ingress-nginx
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,8 +10,8 @@ spec:
 
   source:
     ### configuration to HELM Repo ###
-    repoURL: https://prometheus-community.github.io/helm-charts/
-    chart: kube-prometheus-stack
+    repoURL: https://kubernetes.github.io/ingress-nginx
+    chart: ingress-nginx
     targetRevision: "*" # "*" to use the latest version
 
     ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
@@ -21,7 +21,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: pr-op
+    namespace: ingress-nginx
 
   # SYNC IS NOT ENABLED BY DEFAULT (it's a security mechanism to avoid accidental deletions)
   syncPolicy:
