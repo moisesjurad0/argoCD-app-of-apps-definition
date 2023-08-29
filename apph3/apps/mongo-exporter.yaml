@@ -13,6 +13,9 @@ spec:
     repoURL: https://prometheus-community.github.io/helm-charts
     chart: prometheus-mongodb-exporter
     targetRevision: "*" # "*" to use the latest version
+    helm:
+      valuesFiles:
+        - apph3/apps/mongo-exporter/values.yaml
 
     ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
     # repoURL: https://github.com/prometheus-community/helm-charts.git
@@ -31,6 +34,3 @@ spec:
     automated:
       selfHeal: true #it ensures the app get exactly as defined in these files otherwise it syncs (creates what's missing)
       prune: true # and drop any external changes
-
-  valuesFiles:
-    - apph3/apps/mongo-exporter/values.yaml
