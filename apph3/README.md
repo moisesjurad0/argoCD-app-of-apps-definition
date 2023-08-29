@@ -82,3 +82,15 @@
 ## more instructions
 
 `kubectl port-forward -n=pr-op service/pr-op-kube-prometheus-stac-prometheus 9090`
+
+## Prometheus exporters
+
+have 3 parts:
+
+1. Exporter application <-- inside the docker image | exposes /metrics endpoint
+1. Service (svc) <-- for connecting to the exporter
+1. ServiceMonitor <-- to be discovered
+
+Can find it here
+
+<https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-mongodb-exporter>
