@@ -32,5 +32,5 @@ spec:
       selfHeal: true #it ensures the app get exactly as defined in these files otherwise it syncs (creates what's missing)
       prune: true # and drop any external changes
 
-  # valuesFiles:
-  #   - apph3/apps/mongo-exporter/values.yaml
+  valuesFiles:
+    - apph3/apps/mongo-exporter/values.yaml
