@@ -12,6 +12,7 @@
     ```
 
 1. `kubectl port-forward svc/argocd-server -n argocd 8080:443` <-- do a port-forward to access web interface
+    - open: <https://127.0.0.1:8080/>
     - user
     : admin
     - password
@@ -28,6 +29,15 @@
     # or sync this way using minikube
     argocd app sync apps --server localhost:8080
     ```
+
+1. `kubectl port-forward -n=pr-op service/pr-op-kube-prometheus-stac-prometheus 9090` <-- do a port-forward to access web interface
+    - open: <http://127.0.0.1:9090>
+        - go to: Status >> Targets
+
+1. `kubectl get servicemonitor -n pr-op` <-- get all servicemonitor
+1. `kubectl get servicemonitor pr-op-grafana -n pr-op -oyaml` <-- get all servicemonitor
+1. `kubectl get crd -n pr-op`
+1. `kubectl get prometheuses.monitoring.coreos.com -n pr-op -oyaml`
 
 ## solving problems
 
@@ -68,3 +78,7 @@
     syncOptions:
         - Replace=true
     ```
+
+## more instructions
+
+`kubectl port-forward -n=pr-op service/pr-op-kube-prometheus-stac-prometheus 9090`
