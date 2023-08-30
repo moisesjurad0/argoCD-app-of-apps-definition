@@ -232,3 +232,30 @@ volumeMounts: []
 ### Prometheus exporters | ServiceMonitor
 
 ServiceMonitor is a special kind of services. It uses "labels relase prometheus" to get scrape from prometheus
+
+`kubectl get servicemonitor -n mongodb mongodb-exporter-prometheus-mongodb-exporter -oyaml` <-- verify servicemonitor
+
+```sh
+kubectl get crd
+# ouput
+NAME                                        CREATED AT
+alertmanagerconfigs.monitoring.coreos.com   2023-08-29T18:32:55Z
+alertmanagers.monitoring.coreos.com         2023-08-29T18:32:56Z
+applications.argoproj.io                    2023-08-29T18:23:16Z
+applicationsets.argoproj.io                 2023-08-29T18:23:16Z
+appprojects.argoproj.io                     2023-08-29T18:23:17Z
+podmonitors.monitoring.coreos.com           2023-08-29T18:32:55Z
+probes.monitoring.coreos.com                2023-08-29T18:32:55Z
+prometheusagents.monitoring.coreos.com      2023-08-29T18:50:13Z
+prometheuses.monitoring.coreos.com          2023-08-29T18:50:13Z
+prometheusrules.monitoring.coreos.com       2023-08-29T18:32:55Z
+scrapeconfigs.monitoring.coreos.com         2023-08-29T18:32:55Z
+servicemonitors.monitoring.coreos.com       2023-08-29T18:32:55Z
+thanosrulers.monitoring.coreos.com          2023-08-29T18:32:56Z
+```
+
+```sh
+kubectl get crd prometheuses.monitoring.coreos.com -oyaml
+kubectl get crd prometheuses.monitoring.coreos.com -oyaml > prometheuses.monitoring.coreos.com
+# serviceMonitorSelector > matchLabels > release > prometheus
+```
