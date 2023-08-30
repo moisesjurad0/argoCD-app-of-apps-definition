@@ -14,9 +14,16 @@ spec:
     chart: prometheus-mongodb-exporter
     targetRevision: "*" # "*" to use the latest version
     helm:
-      valuesFiles:
-        - https://raw.githubusercontent.com/moisesjurad0/k8s-argoCD-app-of-apps-definition/main/apph3/apps/mongo-exporter/values.yaml
-        # - apph3/apps/mongo-exporter/values.yaml
+      values: |
+        mongodb:
+          uri: "mongodb://mongodb-service:27017"
+        serviceMonitor:
+          additionalLabels:
+            release: prometheus
+
+    # valuesFiles:
+    # - https://raw.githubusercontent.com/moisesjurad0/k8s-argoCD-app-of-apps-definition/main/apph3/apps/mongo-exporter/values.yaml
+    # - apph3/apps/mongo-exporter/values.yaml
 
     ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
     # repoURL: https://github.com/prometheus-community/helm-charts.git
