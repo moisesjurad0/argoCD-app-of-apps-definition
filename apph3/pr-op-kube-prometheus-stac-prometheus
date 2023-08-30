@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: Prometheus
 metadata:
   creationTimestamp: "2023-08-30T17:03:16Z"
-  generation: 1
+  generation: 2
   labels:
     app: kube-prometheus-stack-prometheus
     app.kubernetes.io/instance: pr-op
@@ -14,7 +14,7 @@ metadata:
     release: pr-op
   name: pr-op-kube-prometheus-stac-prometheus
   namespace: monitoring
-  resourceVersion: "103363"
+  resourceVersion: "105012"
   uid: a28fa58f-2c12-4d64-8bd1-09053d9ede99
 spec:
   alerting:
@@ -63,9 +63,7 @@ spec:
       type: RuntimeDefault
   serviceAccountName: pr-op-kube-prometheus-stac-prometheus
   serviceMonitorNamespaceSelector: {}
-  serviceMonitorSelector:
-    matchLabels:
-      release: pr-op
+  serviceMonitorSelector: {}
   shards: 1
   tsdb:
     outOfOrderTimeWindow: 0s
@@ -74,12 +72,12 @@ spec:
 status:
   availableReplicas: 1
   conditions:
-  - lastTransitionTime: "2023-08-30T18:13:56Z"
-    observedGeneration: 1
+  - lastTransitionTime: "2023-08-30T18:37:30Z"
+    observedGeneration: 2
     status: "True"
     type: Available
-  - lastTransitionTime: "2023-08-30T18:13:56Z"
-    observedGeneration: 1
+  - lastTransitionTime: "2023-08-30T18:37:30Z"
+    observedGeneration: 2
     status: "True"
     type: Reconciled
   paused: false
