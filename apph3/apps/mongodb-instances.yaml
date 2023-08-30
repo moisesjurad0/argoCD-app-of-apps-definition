@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mongodb-operator
+  name: mongodb-instances
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,14 +10,14 @@ spec:
 
   source:
     ### configuration to HELM Repo ###
-    repoURL: https://mongodb.github.io/helm-charts
-    chart: community-operator
-    targetRevision: "*" # "*" to use the latest version
+    # repoURL: https://prometheus-community.github.io/helm-charts/
+    # chart: kube-prometheus-stack
+    # targetRevision: "*" # "*" to use the latest version
 
     ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
-    # repoURL: https://github.com/moisesjurad0/k8s-argoCD-app-of-apps-definition
-    # path: apph3/apps/mongo
-    # targetRevision: HEAD
+    repoURL: https://github.com/moisesjurad0/k8s-argoCD-app-of-apps-definition
+    path: apph3/apps/mongodb-instances
+    targetRevision: HEAD
 
   destination:
     server: https://kubernetes.default.svc
