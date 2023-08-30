@@ -19,10 +19,7 @@ spec:
           uri: "mongodb://mongodb-service:27017"
 
         serviceMonitor:
-          enabled: true
-          interval: 30s
-          scrapeTimeout: 10s
-          namespace: mongodb
+          enabled: true          
           additionalLabels:
             release: prometheus
 

@@ -91,7 +91,7 @@ have 3 parts:
 1. Service (svc) <-- for connecting to the exporter
 1. ServiceMonitor <-- to be discovered
 
-## Prometheus exporters details
+### Prometheus exporters details
 
 Can find it here
 
@@ -227,5 +227,8 @@ volumes: []
 
 # Volumes that will be mounted into the exporter pod
 volumeMounts: []
-
 ```
+
+### Prometheus exporters | ServiceMonitor
+
+ServiceMonitor is a special kind of services. It uses "labels relase prometheus" to get scrape from prometheus
