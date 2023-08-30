@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"monitoring.coreos.com/v1","kind":"ServiceMonitor","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"mongodb-exporter","app.kubernetes.io/managed-by":"Helm","app.kubernetes.io/name":"prometheus-mongodb-exporter","app.kubernetes.io/version":"0.31.0","helm.sh/chart":"prometheus-mongodb-exporter-3.3.0","release":"prometheus"},"name":"mongodb-exporter-prometheus-mongodb-exporter","namespace":"mongodb"},"spec":{"endpoints":[{"interval":"30s","port":"metrics","scrapeTimeout":"10s"}],"namespaceSelector":{"matchNames":["mongodb"]},"selector":{"matchLabels":{"app.kubernetes.io/instance":"mongodb-exporter","app.kubernetes.io/name":"prometheus-mongodb-exporter"}}}}
-  creationTimestamp: "2023-08-30T10:15:27Z"
+  creationTimestamp: "2023-08-30T19:28:24Z"
   generation: 1
   labels:
     app.kubernetes.io/instance: mongodb-exporter
@@ -15,8 +15,8 @@ metadata:
     release: prometheus
   name: mongodb-exporter-prometheus-mongodb-exporter
   namespace: mongodb
-  resourceVersion: "74575"
-  uid: 906292c6-539b-4e03-b1da-083dafa2a79c
+  resourceVersion: "108068"
+  uid: cfe52c92-2bc7-4f0b-944f-dd304b920a1a
 spec:
   endpoints:
   - interval: 30s
