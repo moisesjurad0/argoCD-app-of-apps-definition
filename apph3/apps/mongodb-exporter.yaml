@@ -16,7 +16,7 @@ spec:
     helm: # this was simple solution to values.yaml file
       values: |
         mongodb:
-          uri: "mongodb://mongodb-service:27017"
+          uri: "mongodb://my-mongodb-svc:27017"
         serviceMonitor:
           enabled: true          
           additionalLabels:
