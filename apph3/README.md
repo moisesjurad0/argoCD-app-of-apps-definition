@@ -259,3 +259,5 @@ kubectl get crd prometheuses.monitoring.coreos.com -oyaml
 kubectl get crd prometheuses.monitoring.coreos.com -oyaml > prometheuses.monitoring.coreos.com
 # serviceMonitorSelector > matchLabels > release > prometheus
 ```
+
+prometheus crd vs prometheus prometheus (object)
