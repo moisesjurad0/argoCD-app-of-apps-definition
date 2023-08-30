@@ -13,7 +13,7 @@ spec:
     repoURL: https://prometheus-community.github.io/helm-charts
     chart: prometheus-mongodb-exporter
     targetRevision: "*" # "*" to use the latest version
-    helm:
+    helm: # this was simple solution to values.yaml file
       values: |
         mongodb:
           uri: "mongodb://mongodb-service:27017"
