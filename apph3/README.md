@@ -273,3 +273,11 @@ prometheus:
 # https://github.com/prometheus-community/helm-charts/issues/1911
 serviceMonitorSelectorNilUsesHelmValues: false
 ```
+--
+
+```sh
+kubectl get servicemonitor -n mongodb mongodb-exporter-prometheus-mongodb-exporter -oyaml
+kubectl get servicemonitor -n mongodb mongodb-exporter-prometheus-mongodb-exporter -oyaml > mongodb-exporter-prometheus-mongodb-exporter
+#
+kubectl port-forward svc/mongodb-exporter-prometheus-mongodb-exporter -n mongodb 9216
+```
