@@ -260,4 +260,16 @@ kubectl get crd prometheuses.monitoring.coreos.com -oyaml > prometheuses.monitor
 # serviceMonitorSelector > matchLabels > release > prometheus
 ```
 
+---
+
 prometheus crd vs prometheus prometheus (object)
+
+```yaml
+# https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml#L2282
+prometheus:
+  prometheusSpec: 
+    serviceMonitorSelector: {}
+    serviceMonitorNamespaceSelector: {}
+# https://github.com/prometheus-community/helm-charts/issues/1911
+serviceMonitorSelectorNilUsesHelmValues: false
+```

@@ -17,10 +17,7 @@ spec:
       # by default was this: serviceMonitorSelector:  matchLabels: release: pr-op
       # the value is the name of the ArgoCD app or namespace
       values: |
-        prometheus:
-          prometheusSpec: 
-            serviceMonitorSelector: {}
-            serviceMonitorNamespaceSelector: {}
+        prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues: false
 
     ### configuration to reach GIT Repo with a HELM Chart inside, within GitHub ###
     # repoURL: https://github.com/prometheus-community/helm-charts.git
