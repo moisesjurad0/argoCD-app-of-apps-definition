@@ -14,6 +14,8 @@ spec:
     chart: kube-prometheus-stack
     targetRevision: "*" # "*" to use the latest version
     helm: # this was simple solution to values.yaml file
+      # by default was this: serviceMonitorSelector:  matchLabels: release: pr-op
+      # the value is the name of the ArgoCD app or namespace
       values: |
         prometheus:
           prometheusSpec: 
