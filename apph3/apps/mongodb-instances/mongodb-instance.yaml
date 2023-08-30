@@ -35,4 +35,4 @@ metadata:
   namespace: mongodb
 type: Opaque
 stringData:
-  password: my-user
+  password: my-password
