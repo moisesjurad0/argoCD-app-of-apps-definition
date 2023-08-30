@@ -21,6 +21,7 @@ spec:
           enabled: true          
           additionalLabels:
             release: prometheus
+    # uri: "mongodb://statefulset.apps/my-mongodb:27017"
 
     # valuesFiles:
     # - https://raw.githubusercontent.com/moisesjurad0/k8s-argoCD-app-of-apps-definition/main/apph3/apps/mongo-exporter/values.yaml
