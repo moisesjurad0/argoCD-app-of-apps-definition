@@ -2,7 +2,7 @@
 apiVersion: mongodbcommunity.mongodb.com/v1
 kind: MongoDBCommunity
 metadata:
-  name: example-mongodb
+  name: my-mongodb
   namespace: mongodb
 spec:
   members: 3
