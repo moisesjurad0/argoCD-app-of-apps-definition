@@ -20,7 +20,7 @@ spec:
         serviceMonitor:
           enabled: true          
           additionalLabels:
-            release: prometheus2
+            release: prometheus
 
     # valuesFiles:
     # - https://raw.githubusercontent.com/moisesjurad0/k8s-argoCD-app-of-apps-definition/main/apph3/apps/mongo-exporter/values.yaml
