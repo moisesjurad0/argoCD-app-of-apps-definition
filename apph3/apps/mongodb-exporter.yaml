@@ -13,14 +13,16 @@ spec:
     repoURL: https://prometheus-community.github.io/helm-charts
     chart: prometheus-mongodb-exporter
     targetRevision: "*" # "*" to use the latest version
-    helm: # this was simple solution to values.yaml file
-      values: |
-        mongodb:
-          uri: "mongodb://my-mongodb-svc:27017"
-        serviceMonitor:
-          enabled: true          
-          additionalLabels:
-            release: prometheus
+
+    # helm: # this was simple solution to values.yaml file
+    #   values: |
+    #     mongodb:
+    #       uri: "mongodb://my-mongodb-svc:27017"
+    #     serviceMonitor:
+    #       enabled: true
+    #       additionalLabels:
+    #         release: prometheus
+
     # uri: "mongodb://statefulset.apps/my-mongodb:27017"
 
     # valuesFiles:
